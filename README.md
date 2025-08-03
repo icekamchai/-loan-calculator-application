@@ -1,80 +1,50 @@
-<<<<<<< HEAD
-# Nuxt Minimal Starter
+# Loan Calculator Application
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+โปรเจกต์นี้คือเว็บแอปพลิเคชันสำหรับคำนวณสินเชื่อแบบลดต้นลดดอก และระบบจัดการบทความที่พัฒนาด้วย Nuxt 3 โดยมีระบบ Authentication ที่เชื่อมต่อกับ Firebase และรองรับการทำงานแบบ PWA
 
-## Setup
+## วิธี Setup และรันโปรเจกต์
 
-Make sure to install dependencies:
+- **ติดตั้ง Dependencies:** ใช้คำสั่ง `npm install`
+- **รัน Development Server:** ใช้คำสั่ง `npm run dev`
 
-```bash
-# npm
-npm install
+## Features ที่ Implement
 
-# pnpm
-pnpm install
+### เครื่องคำนวณสินเชื่อ
 
-# yarn
-yarn install
+- มี Form สำหรับกรอกข้อมูลสินเชื่อ (ยอดเงินกู้, อัตราดอกเบี้ย, ระยะเวลา)
+- แสดงผลการคำนวณแบบ Real-time (ยอดผ่อนต่อเดือน, ดอกเบี้ยรวม, ยอดชำระทั้งหมด)
+- แสดงตารางผ่อนชำระ
+- มี Pie Chart, Line Chart และ Bar Chart สำหรับ Data Visualization
+- มีระบบเปรียบเทียบสินเชื่อ
+- Export ตารางผ่อนชำระเป็น PDF และ CSV
 
-# bun
-bun install
-```
+### ระบบจัดการบทความ
 
-## Development Server
+- ระบบ CRUD สำหรับจัดการบทความ (CREATE, READ, UPDATE, DELETE)
+- มี Rich text editor (Tiptap) สำหรับสร้างบทความ
+- มีระบบค้นหาบทความพร้อม Filter และ Search suggestions
+- มี Dashboard แสดงสถิติบทความ
+- มีระบบ Like/Bookmark, Comment, และ View count
+- ระบบ Authentication ด้วย Firebase
 
-Start the development server on `http://localhost:3000`:
+## Architecture Decisions
 
-```bash
-# npm
-npm run dev
+- **Nuxt 3 (SSR):** โปรเจกต์ถูกออกแบบมาในรูปแบบ Server-Side Rendering (SSR) เพื่อประสิทธิภาพและ SEO ที่ดี
+- **Folder Structure:** จัดโครงสร้างตามแนวทางของ Nuxt โดยแยก Pages, Components, Composables, Store, และ API Routes อย่างชัดเจน
+- **State Management:** ใช้ Pinia สำหรับจัดการ Global State และใช้ `localStorage` สำหรับ Client-side Persistence
+- **Data:** ใช้ Mock API (Nitro server routes) ร่วมกับ Mock data ใน `server/db`
+- **Authentication:** ใช้ Firebase Auth เพื่อจัดการระบบล็อกอิน
 
-# pnpm
-pnpm dev
+## Demo Credentials
 
-# yarn
-yarn dev
+สำหรับล็อกอินเข้าระบบจัดการบทความ ข้อมูลผู้ใช้งานที่สร้างไว้ใน Firebase Console
 
-# bun
-bun run dev
-```
+- **Email:** test@example.com
+- **Password:** test1234
 
-## Production
+## Diagram
 
-Build the application for production:
+แนบเป็นรูปไว้กับ gmail
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-=======
-# -loan-calculator-application
-ข้อสอบ Developer เว็บแอปพลิเคชันสำหรับคำนวณสินเชื่อและระบบจัดการบทความ
->>>>>>> 82f1bf63a4e57ae9c7b90480b110b7e98917620a
+- **Flowchart:**
+- **Architecture Diagram:**
