@@ -77,7 +77,7 @@ async function updateArticle() {
             }
         })
 
-        // เมื่ออัปเดตสำเร็จ ให้ refresh ข้อมูล history ด้วย
+
         await refreshVersions();
 
         alert('แก้ไขบทความสำเร็จ!');
@@ -141,7 +141,7 @@ onBeforeUnmount(() => {
                             <v-btn type="submit" color="primary" variant="flat" size="large">
                                 บันทึกการเปลี่ยนแปลง
                             </v-btn>
-                            <!-- เพิ่มปุ่มสำหรับดูประวัติเวอร์ชัน -->
+
                             <v-btn color="info" variant="text" @click="showVersionHistory = true"
                                 prepend-icon="mdi-history">
                                 ประวัติการแก้ไข
@@ -152,7 +152,7 @@ onBeforeUnmount(() => {
             </v-col>
         </v-row>
 
-        <!-- Version History Dialog (เหมือนกับใน [id].vue) -->
+
         <v-dialog v-model="showVersionHistory" max-width="800">
             <v-card>
                 <v-card-title class="text-h5">ประวัติการแก้ไขบทความ</v-card-title>
@@ -166,8 +166,8 @@ onBeforeUnmount(() => {
                             <v-list-item-title>
                                 <strong>{{ index === 0 ? 'เวอร์ชันล่าสุด' : `เวอร์ชันที่ ${(versions?.length ?? 0) -
                                     index}`
-                                    }}</strong>
-                                <span class="text-caption text-medium-emphasis ml-2"> ({{ version.changes }})</span>
+                                }}</strong>
+                                <span class="text-caption text-medium-emphasis ml-2"> ({{ version.title }})</span>
                             </v-list-item-title>
                             <v-list-item-subtitle>
                                 แก้ไขเมื่อ {{ new Date(version.timestamp).toLocaleString('th-TH') }} โดย {{
@@ -189,7 +189,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style>
-/* ใช้ Style เดิมจากหน้า new.vue */
 .editor-container {
     border: 1px solid #ccc;
     border-radius: 4px;

@@ -9,7 +9,7 @@ const error = ref('');
 const loading = ref(false);
 
 const router = useRouter();
-const auth = getAuth(); // Use the auth instance from the plugin
+const auth = getAuth();
 
 const handleLogin = async () => {
     error.value = '';
@@ -17,10 +17,8 @@ const handleLogin = async () => {
     try {
         await signInWithEmailAndPassword(auth, email.value, password.value);
 
-        // Check if there is a redirect query parameter
         const redirectPath = router.currentRoute.value.query.redirect as string;
 
-        // Redirect to the original page or home if not specified
         router.push(redirectPath || '/');
 
     } catch (err: any) {

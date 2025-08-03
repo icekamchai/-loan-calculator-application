@@ -18,9 +18,7 @@ export default defineEventHandler((event) => {
     throw createError({ statusCode: 404, statusMessage: "Version not found" });
   }
 
-  // สร้างบทความจำลองจากเวอร์ชันที่ต้องการ
   const versionToRestore = versions[versions.length - 1 - versionId];
 
-  // ตรงนี้เราไม่มีข้อมูล content เดิมของเวอร์ชันเก่า จึงแค่ส่งกลับ history ไป
   return versionToRestore;
 });

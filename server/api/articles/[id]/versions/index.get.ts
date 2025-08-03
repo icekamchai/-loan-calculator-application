@@ -8,7 +8,6 @@ export default defineEventHandler((event) => {
     throw createError({ statusCode: 404, statusMessage: "Article not found" });
   }
 
-  // ส่งกลับข้อมูล history แบบเรียงจากใหม่ไปเก่า
   return (
     article.versionHistory?.sort(
       (a, b) =>

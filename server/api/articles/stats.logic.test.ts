@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import { getArticleStats } from "./stats.logic";
 import type { Article } from "~/server/db/articles";
 
-// Mock data to be used in the test
 const mockArticles: Article[] = [
   {
     id: 1,
@@ -16,7 +15,7 @@ const mockArticles: Article[] = [
     publishedAt: "2025-01-01",
     status: "published",
     viewCount: 100,
-    isFeatured: false, // เพิ่มบรรทัดนี้
+    isFeatured: false,
     comments: [
       {
         id: 1,
@@ -46,7 +45,7 @@ const mockArticles: Article[] = [
     publishedAt: "2025-01-01",
     status: "published",
     viewCount: 200,
-    isFeatured: true, // เพิ่มบรรทัดนี้
+    isFeatured: true,
     comments: [
       {
         id: 3,
@@ -69,7 +68,7 @@ const mockArticles: Article[] = [
     publishedAt: "2025-01-01",
     status: "archived",
     viewCount: 50,
-    isFeatured: false, // เพิ่มบรรทัดนี้
+    isFeatured: false,
     comments: [],
   },
   {
@@ -84,7 +83,7 @@ const mockArticles: Article[] = [
     publishedAt: "2025-01-01",
     status: "published",
     viewCount: 300,
-    isFeatured: true, // เพิ่มบรรทัดนี้
+    isFeatured: true,
     comments: [
       {
         id: 4,
@@ -121,7 +120,7 @@ const mockArticles: Article[] = [
     publishedAt: "2025-01-01",
     status: "draft",
     viewCount: 10,
-    isFeatured: false, // เพิ่มบรรทัดนี้
+    isFeatured: false,
     comments: [],
   },
 ];

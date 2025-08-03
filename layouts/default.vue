@@ -2,17 +2,23 @@
 import ThemeToggle from '~/components/ThemeToggle.vue';
 import UserAvatar from '~/components/UserAvatar.vue';
 
+const drawer = ref(false)
+
 const navItems = [
-    { title: 'Home', to: '/' },
-    { title: 'Calculator', to: '/calculator' },
-    { title: 'Comparison', to: '/comparison' },
-    { title: 'Articles', to: '/articles' },
+    { title: 'Home', to: '/', icon: 'mdi-home-outline' },
+    { title: 'Calculator', to: '/calculator', icon: 'mdi-calculator' },
+    { title: 'Comparison', to: '/comparison', icon: 'mdi-scale-balance' },
+    { title: 'Articles', to: '/articles', icon: 'mdi-post-outline' },
 ];
 </script>
 
 <template>
     <v-app>
         <v-app-bar color="surface" density="compact" flat class="px-4">
+            <ClientOnly>
+                <v-app-bar-nav-icon @click="drawer = !drawer" class="d-md-none" />
+            </ClientOnly>
+
             <v-app-bar-title>
                 <div class="d-flex align-center">
                     <v-icon start icon="mdi-calculator-variant-outline"></v-icon>
@@ -22,16 +28,29 @@ const navItems = [
 
             <v-spacer></v-spacer>
 
-            <v-btn v-for="item in navItems" :key="item.title" :to="item.to" text>
-                {{ item.title }}
-            </v-btn>
+            <ClientOnly>
+                <div class="d-none d-md-flex">
+                    <v-btn v-for="item in navItems" :key="item.title" :to="item.to" text>
+                        {{ item.title }}
+                    </v-btn>
+                </div>
+            </ClientOnly>
 
-            <ThemeToggle />
+            <ClientOnly>
+                <ThemeToggle />
+            </ClientOnly>
 
             <ClientOnly>
                 <UserAvatar />
             </ClientOnly>
         </v-app-bar>
+
+        <v-navigation-drawer v-model="drawer" temporary>
+            <v-list>
+                <v-list-item v-for="item in navItems" :key="item.title" :to="item.to" :prepend-icon="item.icon"
+                    :title="item.title" />
+            </v-list>
+        </v-navigation-drawer>
 
         <v-main>
             <NuxtPage />

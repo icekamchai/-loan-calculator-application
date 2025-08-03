@@ -21,7 +21,7 @@ const publishDate = ref<Date | null>(null)
 const publishTime = ref('09:00')
 const isUploading = ref(false)
 
-// --- Computed property for combining date and time and determining status ---
+
 const computedPublishedAt = computed(() => {
     if (!publishDate.value) {
         return new Date().toISOString()
@@ -83,7 +83,7 @@ function goToPreview() {
 
     const previewData = {
         ...form.value,
-        authorId: 'admin', // แก้ไขให้ใช้ authorId โดยตรง
+        authorId: 'admin',
         publishedAt: computedPublishedAt.value,
         viewCount: 0,
         status: articleStatus,

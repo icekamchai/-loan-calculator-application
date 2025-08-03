@@ -1,7 +1,8 @@
 export interface VersionHistory {
   timestamp: string;
   editorId: string;
-  changes: string;
+  title: string;
+  content: string;
 }
 
 export interface Comment {
@@ -68,7 +69,8 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-08-01T09:00:00Z",
         editorId: "khun-jai-lole",
-        changes: "สร้างบทความ",
+        title: "5 วิธีวางแผนการเงินสำหรับผู้เริ่มต้น",
+        content: `<p>การวางแผนการเงินเป็นสิ่งสำคัญที่ไม่ว่าใครก็ควรทำ นี่คือ 5 ขั้นตอนง่ายๆ ที่จะช่วยให้คุณเริ่มต้นได้...</p>`,
       },
     ],
     series: "Series A: เริ่มต้นวางแผนการเงิน",
@@ -93,7 +95,8 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-07-25T14:00:00Z",
         editorId: "rak-tae-pae-pla-too",
-        changes: "สร้างบทความ",
+        title: 'ทำความเข้าใจ "ดอกเบี้ยทบต้น" พลังมหัศจรรย์ของการลงทุน',
+        content: `<p>ดอกเบี้ยทบต้นคือการที่ดอกเบี้ยที่คุณได้รับ ถูกนำกลับไปลงทุนต่อเพื่อสร้างดอกเบี้ยเพิ่มขึ้นไปอีก...</p>`,
       },
     ],
     series: "Series B: เทคนิคการลงทุนเบื้องต้น",
@@ -118,7 +121,9 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-08-02T12:00:00Z",
         editorId: "khun-jai-lole",
-        changes: "สร้างบทความ",
+        title: "เคล็ดลับการออมเงิน ฉบับมนุษย์เงินเดือน",
+        content:
+          "<p>การออมเงินไม่ใช่เรื่องยาก แม้จะมีรายได้จำกัด หากรู้จักวางแผนและมีวินัย...</p>",
       },
     ],
     series: "Series A: เริ่มต้นวางแผนการเงิน",
@@ -144,7 +149,9 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-07-15T08:30:00Z",
         editorId: "rak-tae-pae-pla-too",
-        changes: "สร้างบทความ",
+        title: "ลงทุนในหุ้นสำหรับมือใหม่ เริ่มต้นอย่างไรดี?",
+        content:
+          "<p>การลงทุนในหุ้นอาจดูน่ากลัวสำหรับมือใหม่ แต่ด้วยความเข้าใจที่ถูกต้อง ทุกคนก็สามารถเริ่มต้นได้...</p>",
       },
     ],
     series: "Series B: เทคนิคการลงทุนเบื้องต้น",
@@ -170,7 +177,9 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-06-20T11:00:00Z",
         editorId: "khun-jai-lole",
-        changes: "สร้างบทความ",
+        title: "การจัดการหนี้สินอย่างชาญฉลาด",
+        content:
+          "<p>หนี้สินเป็นภาระที่สามารถจัดการได้ ขั้นตอนแรกคือการยอมรับและทำความเข้าใจสถานะหนี้ทั้งหมดของคุณ...</p>",
       },
     ],
   },
@@ -195,7 +204,9 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-05-30T10:00:00Z",
         editorId: "kai-tod-hatyai",
-        changes: "สร้างบทความ",
+        title: "กองทุนรวม RMF/SSF เลือกกองไหนดีสำหรับลดหย่อนภาษี",
+        content:
+          "<p>การเลือกลงทุนใน RMF และ SSF เป็นวิธีลดหย่อนภาษีที่ได้รับความนิยม แต่ละกองทุนมีนโยบายและความเสี่ยงต่างกัน...</p>",
       },
     ],
   },
@@ -219,7 +230,9 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-04-11T13:00:00Z",
         editorId: "rak-tae-pae-pla-too",
-        changes: "สร้างบทความ",
+        title: "สร้าง Passive Income จากการลงทุนอสังหาริมทรัพย์",
+        content:
+          "<p>Passive Income คือรายได้ที่เข้ามาอย่างสม่ำเสมอโดยที่เราไม่ต้องลงแรงทำงานตลอดเวลา การลงทุนอสังหาฯ เพื่อปล่อยเช่าเป็นหนึ่งในวิธีที่นิยมที่สุด...</p>",
       },
     ],
     series: "Series B: เทคนิคการลงทุนเบื้องต้น",
@@ -244,7 +257,9 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-03-18T09:00:00Z",
         editorId: "khun-jai-lole",
-        changes: "สร้างบทความ",
+        title: "5 ประกันที่ควรมีติดตัวไว้ อุ่นใจทุกสถานการณ์",
+        content:
+          "<p>ไม่มีใครรู้ว่าจะเกิดอะไรขึ้นในอนาคต การมีประกันที่เหมาะสมจะช่วยลดภาระทางการเงินเมื่อเกิดเหตุไม่คาดฝัน...</p>",
       },
     ],
   },
@@ -269,7 +284,9 @@ export const articlesDB: Article[] = [
       {
         timestamp: "2025-02-28T09:00:00Z",
         editorId: "somchai-jsm",
-        changes: "สร้างบทความ",
+        title: "เทรนด์การลงทุนปี 2025 ที่คุณไม่ควรพลาด",
+        content:
+          "<p>เทคโนโลยี, ความยั่งยืน (ESG), และสุขภาพ เป็นเมกะเทรนด์ที่จะขับเคลื่อนเศรษฐกิจโลกในอนาคต...</p>",
       },
     ],
   },
@@ -297,7 +314,7 @@ export const articlesDB: Article[] = [
     category: "การลงทุน",
     tags: ["ลงทุน", "กองทุนรวม"],
     authorId: "admin",
-    publishedAt: "2025-08-15T09:00:00Z", // ตั้งเวลาเผยแพร่ในอนาคต
+    publishedAt: "2025-08-15T09:00:00Z",
     status: "draft",
     viewCount: 0,
     isFeatured: false,

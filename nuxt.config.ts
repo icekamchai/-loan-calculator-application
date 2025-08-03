@@ -1,4 +1,3 @@
-// nuxt.config.ts
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/main.css"],
@@ -12,16 +11,19 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2025-08-03",
   app: {
+    head: {
+      link: [{ rel: "manifest", href: "/manifest.webmanifest" }],
+    },
     pageTransition: {
       name: "page",
       mode: "out-in",
     },
   },
+
   modules: [
     "@pinia/nuxt",
     "@nuxt/image",
     "vuetify-nuxt-module",
-    // รวมการตั้งค่า pwa ไว้ใน modules array โดยตรง
     [
       "@vite-pwa/nuxt",
       {

@@ -57,7 +57,7 @@ const isDraftArticle = computed(() => {
     return article.value?.status === 'draft' && (!article.value?.publishedAt || new Date(article.value.publishedAt) <= new Date());
 });
 
-// Function to handle publishing at the scheduled time (which is already a draft)
+
 async function saveScheduledDraft() {
     if (!article.value) return;
 
@@ -94,7 +94,7 @@ async function saveScheduledDraft() {
     }
 }
 
-// Function to handle publishing immediately, overriding the scheduled time
+
 async function publishImmediately() {
     if (!article.value) return;
 
@@ -131,7 +131,7 @@ async function publishImmediately() {
     }
 }
 
-// Function to handle standard publishing
+
 async function publishArticle() {
     if (!article.value) return;
 
@@ -236,7 +236,7 @@ async function publishArticle() {
             </v-row>
         </v-container>
 
-        <!-- Publish Confirmation Dialog for general draft -->
+
         <v-dialog v-model="showPublishDialog" max-width="500">
             <v-card>
                 <v-card-title class="text-h5">ยืนยันการเผยแพร่</v-card-title>
@@ -249,7 +249,7 @@ async function publishArticle() {
             </v-card>
         </v-dialog>
 
-        <!-- Publish Now Confirmation Dialog for scheduled draft -->
+
         <v-dialog v-model="showPublishNowDialog" max-width="500">
             <v-card>
                 <v-card-title class="text-h5">ยืนยันการเผยแพร่ทันที</v-card-title>
@@ -262,7 +262,7 @@ async function publishArticle() {
             </v-card>
         </v-dialog>
 
-        <!-- Error/Success Message Dialog -->
+
         <v-dialog v-model="showErrorMessage" max-width="400">
             <v-card>
                 <v-card-title class="text-h6">{{ errorMessage.includes('สำเร็จ') ? 'สำเร็จ!' : 'เกิดข้อผิดพลาด'
@@ -277,9 +277,59 @@ async function publishArticle() {
     </div>
 </template>
 
-<style scoped>
-/* สามารถนำ style จากหน้า [id].vue มาใช้ได้ */
-.article-content {
-    line-height: 1.8;
+<style>
+.article-content ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.article-content p,
+.article-content ul {
+    margin-bottom: 1rem;
+}
+
+@media print {
+
+    .v-application>.v-layout>.v-app-bar,
+    .v-application>.v-layout>.v-footer,
+    .v-btn,
+    .comments-section,
+    .v-chip,
+    .v-divider {
+        display: none !important;
+    }
+
+    .v-application__wrap>main {
+        padding: 0 !important;
+    }
+
+    .v-container {
+        padding: 0 !important;
+    }
+
+    .v-row,
+    .v-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-basis: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .v-img,
+    .v-card {
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: black !important;
+    }
+
+    .text-medium-emphasis {
+        color: #333 !important;
+    }
 }
 </style>

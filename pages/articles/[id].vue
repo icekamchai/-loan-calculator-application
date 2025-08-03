@@ -273,7 +273,7 @@ const articleStatus = computed(() => {
                                 <strong>{{ index === 0 ? 'เวอร์ชันล่าสุด' : `เวอร์ชันที่ ${(versions?.length ?? 0) -
                                     index}`
                                     }}</strong>
-                                <span class="text-caption text-medium-emphasis ml-2"> ({{ version.changes }})</span>
+                                <span class="text-caption text-medium-emphasis ml-2"> ({{ version.title }})</span>
                             </v-list-item-title>
                             <v-list-item-subtitle>
                                 แก้ไขเมื่อ {{ new Date(version.timestamp).toLocaleString('th-TH') }} โดย {{

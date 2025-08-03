@@ -24,6 +24,6 @@ export default defineEventHandler(async (event) => {
   };
 
   article.comments.push(newComment);
-  setResponseStatus(event, 201); // 201 Created
+  setResponseStatus(event, 201);
   return newComment;
 });

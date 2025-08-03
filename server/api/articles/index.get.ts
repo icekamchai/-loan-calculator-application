@@ -47,6 +47,17 @@ export default defineEventHandler((event) => {
     );
   }
 
+  if (startDate && endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    end.setHours(23, 59, 59, 999);
+
+    filteredArticles = filteredArticles.filter((article) => {
+      const publishedDate = new Date(article.publishedAt);
+      return publishedDate >= start && publishedDate <= end;
+    });
+  }
+
   filteredArticles.sort((a, b) => {
     if (sortBy === "publishedAt") {
       return (
@@ -64,17 +75,6 @@ export default defineEventHandler((event) => {
     }
     return 0;
   });
-
-  if (startDate && endDate) {
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    end.setHours(23, 59, 59, 999);
-
-    filteredArticles = filteredArticles.filter((article) => {
-      const publishedDate = new Date(article.publishedAt);
-      return publishedDate >= start && publishedDate <= end;
-    });
-  }
 
   const totalArticles = filteredArticles.length;
   const startIndex = (page - 1) * limit;

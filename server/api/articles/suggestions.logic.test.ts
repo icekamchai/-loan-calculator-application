@@ -1,5 +1,4 @@
 import { describe, it, expect, beforeEach } from "vitest";
-// Import the core logic directly from the new logic file
 import { getSuggestionsLogic } from "./suggestions.logic";
 import { articlesDB } from "~/server/db/articles";
 

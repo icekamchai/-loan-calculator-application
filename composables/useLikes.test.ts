@@ -45,9 +45,9 @@ describe("useLikes", () => {
 
   it("should be able to unlike an article", () => {
     const { isLiked, toggleLike } = useLikes();
-    toggleLike(1); // Like it first
+    toggleLike(1);
     expect(isLiked(1)).toBe(true);
-    toggleLike(1); // Unlike it
+    toggleLike(1);
     expect(isLiked(1)).toBe(false);
   });
 

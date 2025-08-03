@@ -1,26 +1,10 @@
 <script setup lang="ts">
 import type { Article } from '~/server/db/articles';
-import { articlesDB } from '~/server/db/articles';
-import { onMounted, ref } from 'vue';
 
-
-const featured = ref<Article[]>([]);
-const pending = ref(true);
-
-onMounted(() => {
-    // ดึงข้อมูลทั้งหมดมาไว้ในฝั่ง Client
-    const allArticles = articlesDB;
-
-    // ทำการ filter และ slice ในฝั่ง Client
-    const filtered = allArticles
-        .filter(
-            (article) => article.isFeatured === true && article.status === "published"
-        )
-        .slice(0, 3);
-
-    featured.value = filtered;
-    pending.value = false;
-});
+const { data: featured, pending } = await useAsyncData(
+    'featuredArticles',
+    () => $fetch<Article[]>('/api/articles/featured')
+);
 </script>
 
 <template>
