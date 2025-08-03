@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
@@ -73,3 +74,7 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+=======
+# -loan-calculator-application
+ข้อสอบ Developer เว็บแอปพลิเคชันสำหรับคำนวณสินเชื่อและระบบจัดการบทความ
+>>>>>>> 82f1bf63a4e57ae9c7b90480b110b7e98917620a
